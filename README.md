@@ -18,9 +18,33 @@ AltoroJ has been developed using Eclipse and designed to run on Tomcat 7, but si
 
 # AltoroJ credentials
 Main usernames and passwords for AltoroJ are as follows:
-jsmith/demo1234
-admin/admin
+- jsmith/demo1234
+- admin/admin
 
 
 
 # Advanced options
+- AltoroJ’s original design goals were to create an application that is easy to deploy, very stable and less dangerous (as far as vulnerable web apps go)
+- However, these goals meant that certain attacks couldn’t be a part of it. Because of this, there are advanced user-configurable properties that can enable AltoroJ behaviors which are disabled by default
+
+- These enable extra functionality, new cool attacks and demos as well as optional behaviors
+
+Please see WEB-INF/app.properties file for more information on each property
+
+
+# Troubleshooting
+
+- Problem: AltoroJ runs, but an error “Failed to create database 'altoro‘” comes up when you try to log in
+- Cause: AltoroJ database does not get created. This is usually caused by folder permission issues on a locked-down system
+- Solution: 	
+To make sure this isn’t a fluke, try to log in again using jsmith/demo1234.
+AltoroJ uses Java’s user.home property as a base directory for its database so this shouldn’t happen. However, if it does. Go to Tomcat’s logs folder and look for “user.home=“ in catalina.out file. This is the folder that AltoroJ is trying to create another folder in and needs write access. You can then:
+Give the user Tomcat runs under read/write/create access to this folder (recommended)
+OR modify Tomcat’s startup to include –Duser.home=“<new_path>” in Java arguments to change DB location
+
+- Problem: AltoroJ does not run on Tomcat due to compilation errors
+- Cause: If you have compilation errors in Eclipse, Java build path is likely to blame
+- Solution: Run AltoroJ's Gradle build in order to download required third party libraries and build AltoroJ
+
+
+
