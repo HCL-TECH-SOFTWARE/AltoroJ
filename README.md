@@ -8,6 +8,13 @@ AltoroJ uses standard Java & JSP functionality without relying on any additional
 AltoroJ uses Apache Derby as its SQL database that is automatically initialized the first time you log into AltoroJ via its web interface. All of the transactions and operations will then be stored in this database from that point on until you delete your repository folder called "altoro" that is located in your OS home folder (e.g. C:\Users\[your_username] or /Users/[your_username]) or enable advanced option to re-initialize your database every time your web application server is restarted (see below).
 
 
+# Binaries and hosted versions
+If you'd like to try AltoroJ but want to skip all of the cool software development stuff, you have a few options.
+
+1. Use publicly hosted version, available at http://altoromutual.com:8080/ . You will not be able to enable any of the advanced options and this site may not always be available, but it's the easiest way to get started
+2. Download an already compiled WAR file from here: {************ ADD LINK TO WAR FILE DOWNLOAD HERE **********} . You can then deploy it on your Tomcat 7.x instance. If you want to tweak advanced options, you will be able to do so once the WAR file is deployed. Restart your Tomcat server for your changes to take effect.
+
+
 # Prereqiusites
 AltoroJ has been developed using Eclipse and designed to run on Tomcat 7, but since it's a relatively simple J2EE app, it should be pretty easy to port it to a different J2EE IDE or another J2EE web application server. Here are out-of-the-box requirements:
 
