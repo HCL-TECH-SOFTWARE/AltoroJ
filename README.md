@@ -1,5 +1,5 @@
 # Description
-WARNING: This application contains security vulnerabilities. Run it only in a backed up and sheltered environment (such as a VM with an recent snapshot and host-only networking) and at your own risk, escpecially if you enable some of the advanced options described below!
+WARNING: This application contains security vulnerabilities. Run it only in a backed-up and sheltered environment (such as a VM with a recent snapshot and host-only networking) and at your own risk, escpecially if you enable some of the advanced options described below!
 
 AltoroJ is a sample banking J2EE web application. It shows what happens when web applications are written with consideration of app functionality but not app security. It's a simple and uncluttered platform for demonstrating and learning more about real-life application security issues.
 
