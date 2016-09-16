@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<news>
+	<!-- If element isPublic is False, do not present publication to web users -->
+	<publication>
+		<id>1</id>
+		<date>1/1/1970</date>
+		<title>Unix was created</title>
+		<isPublic>True</isPublic>
+	</publication>
+	<publication>
+		<id>2</id>
+		<date>1/1/0000</date>
+		<title>Jesus was Born</title>
+		<isPublic>True</isPublic>
+	</publication>
+
+	<publication>
+		<id>3</id>
+		<date>8/12/2003</date>
+		<title>Watchfire Announces General Availability of AppScan QA for Mercury TestDirector</title>
+		<isPublic>True</isPublic>
+	</publication>
+
+	<publication>
+		<id>4</id>
+		<date>1/8/2004</date>
+		<title>Altoro Mutual bank about to purchase 10 AppScan and 50 AppScan DE from Watchfire inc.</title>
+		<isPublic>False</isPublic>
+	</publication>
+
+</news>
