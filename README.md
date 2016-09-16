@@ -19,9 +19,11 @@ If you'd like to try AltoroJ but want to skip all of the cool software developme
 # Prereqiusites
 AltoroJ has been developed using Eclipse and designed to run on Tomcat 7, but since it's a relatively simple J2EE app, it should be pretty easy to port it to a different J2EE IDE or another J2EE web application server. Here are out-of-the-box requirements:
 
-- Eclipse 4.3 or newer
+- Eclipse 4.6 or newer recommended (requires Java 8)
 - Tomcat 7.x
-- Gradle 3.0 and Gradle's Buildship Eclipse plug-in to automatically download required 3rd party libraries and build AltoroJ
+- Gradle 3.0 to build from command line
+- Gradle's Buildship Eclipse plug-in to automatically download required 3rd party libraries and run AltoroJ inside Eclipse
+-- Easiest way to install Buildship is from Eclipse Marketplace (inside Eclipse, go to Help -> Eclipse Marketplace)
 
 
 # AltoroJ credentials
