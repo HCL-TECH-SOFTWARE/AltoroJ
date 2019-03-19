@@ -33,7 +33,8 @@ IBM AltoroJ
     <a id="HyperLink6" href="<%=request.getContextPath()%>/swagger/index.html">REST API</a>
     &nbsp;&nbsp;|&nbsp;&nbsp; 
     &copy;&nbsp;<% out.print(Calendar.getInstance().get(Calendar.YEAR)); %> Altoro Mutual, Inc.
-
+    <span style="color:red;font-weight:bold;font-style:italic;float:right">This web application is open source!<span style="color:black;font-style:italic;font-weight:normal;float:right">&nbsp;<a href="https://github.com/AppSecDev/AltoroJ/">Get your copy from GitHub</a> and take advantage of advanced features</span></span>
+	<br><br><br>
     <div class="disclaimer">
         The AltoroJ website is published by IBM Corporation for the sole purpose of
         demonstrating the effectiveness of IBM products in detecting web application
