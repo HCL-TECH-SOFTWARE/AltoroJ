@@ -1,0 +1,16 @@
+2019-03-04 11:08:23 INFO Database initialized
+2019-03-04 11:13:10 ERROR Column '0' not found.
+2019-03-05 00:52:57 ERROR Failed to start database 'altoro' with class loader WebappClassLoader
+  context: /altoromutual
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@4a23d87f
+, see the next exception for details.
+2019-03-05 01:05:37 ERROR Syntax error: Encountered "Persistent" at line 1, column 76.
+2019-03-05 01:10:56 INFO Transaction >>> From: 800003 - Checking >>> To: 4539082039396288 - Credit Card >>> Amount: $489.15
+2019-03-05 01:11:25 INFO Transaction >>> From: 800005 - Checking >>> To: 4485983356242217 - Credit Card >>> Amount: $2777.47
+2019-03-05 01:11:56 ERROR Login failed >>> User: jsmith >>> Password: demo123
+2019-03-05 01:12:03 ERROR Login failed >>> User: admin >>> Password: admun
+2019-03-05 01:13:11 INFO Transaction >>> From: 800000 - Corporate >>> To: 800001 - Checking >>> Amount: $9999.99

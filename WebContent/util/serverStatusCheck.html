@@ -1,0 +1,120 @@
+<HTML>
+<HEAD><TITLE>Website Service Status</TITLE></HEAD>
+
+<SCRIPT>
+var xmlHttp = false;
+
+	//http://www.ibm.com/developerworks/web/library/wa-ajaxintro1/index.html
+	/* Create a new XMLHttpRequest object to talk to the Web server */
+	xmlHttp = false;
+	/*@cc_on @*/
+	/*@if (@_jscript_version >= 5)
+	try {
+	  xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch (e) {
+	  try {
+	    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	  } catch (e2) {
+ 	   xmlHttp = false;
+ 	 }
+	}
+	@end @*/
+
+	
+	if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+	  xmlHttp = new XMLHttpRequest();
+	}
+
+var sLastHostName='';
+function checkSiteStatus(sHostName)
+{
+	sLastHostName = sHostName;
+	//Make JSON request
+	xmlHttp.open("GET","util/serverStatusCheckService.jsp?HostName=" + sHostName);
+	xmlHttp.onreadystatechange = StateChangeForJSON;
+	xmlHttp.send(null);
+}
+function StateChangeForJSON()
+{
+	if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+	{
+		var jsonObj = eval('('+ xmlHttp.responseText + ')');
+		var jsonFetchHostStatus = jsonObj["HostStatus"];
+		var jsonFetchHostName=jsonObj["HostName"];
+		//get JSON values and output
+		x=document.getElementById('FetchHostName');
+		x.innerHTML=jsonFetchHostName;
+		x=document.getElementById('FetchHostStatus');
+		x.innerHTML=jsonFetchHostStatus;
+	}
+	else if(xmlHttp.readyState == 4 && xmlHttp.status == 500)
+	{
+		x=document.getElementById('FetchHostName');
+		x.innerHTML=sLastHostName;
+		x=document.getElementById('FetchHostStatus');
+		x.innerHTML='The service returned an error. Please be patient while our administrators fix the issue.';
+	}
+	else if(xmlHttp.readyState == 4 && xmlHttp.status == 404)
+	{
+		x=document.getElementById('FetchHostName');
+		x.innerHTML=sLastHostName;
+		x=document.getElementById('FetchHostStatus');
+		x.innerHTML='The service returned an error. The status service appears to not be available';
+	}
+	else if(xmlHttp.readyState == 4 && xmlHttp.status == 401)
+	{
+		x=document.getElementById('FetchHostName');
+		x.innerHTML=sLastHostName;
+		x=document.getElementById('FetchHostStatus');
+		x.innerHTML='The service returned a 401 unauthorized error, indicating it was implemented incorrectly';
+	}
+	else if(xmlHttp.readyState == 4 && xmlHttp.status == 302)
+	{
+		x=document.getElementById('FetchHostName');
+		x.innerHTML=sLastHostName;
+		x=document.getElementById('FetchHostStatus');
+		x.innerHTML='The service returned a 302 redirect, indicating it was implemented incorrectly';
+	}
+}
+
+
+</SCRIPT>
+
+<BODY>
+
+<H1>Server Status Check</H1>
+<TABLE border=0>
+	<TR>
+		<TD width=200 valign=top>
+			Hostname:
+		</TD>
+		<TD align=left valign=top>
+			<DIV ID="FetchHostName" STYLE="font-size:12pt;color:blue;width:200px"></DIV>
+
+		</TD>
+	</TR>
+	<TR>
+		<TD width=200 valign=top>
+			Status:
+		</TD>
+		<TD align=left valign=top>
+			<DIV ID="FetchHostStatus" STYLE="font-size:12pt;width:200px"></DIV>
+		</TD>
+	</TR>
+	<TR>
+		<TD align=right valign=top colspan=2>
+			&nbsp;
+		</TD>
+	</TR>
+	<TR>
+		<TD align=center valign=top colspan=2>
+			<FORM action="javascript:checkSiteStatus('AltoroMutual')" id=frmJsonSubmit>
+				<INPUT TYPE=submit value="Check Status">
+			</FORM>
+		</TD>
+	</TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,63 @@
+<%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil"%>
+<%
+/**
+ This application is for demonstration use only. It contains known application security
+vulnerabilities that were created expressly for demonstrating the functionality of
+application security testing tools. These vulnerabilities may present risks to the
+technical environment in which the application is installed. You must delete and
+uninstall this demonstration application upon completion of the demonstration for
+which it is intended. 
+
+IBM DISCLAIMS ALL LIABILITY OF ANY KIND RESULTING FROM YOUR USE OF THE APPLICATION
+OR YOUR FAILURE TO DELETE THE APPLICATION FROM YOUR ENVIRONMENT UPON COMPLETION OF
+A DEMONSTRATION. IT IS YOUR RESPONSIBILITY TO DETERMINE IF THE PROGRAM IS APPROPRIATE
+OR SAFE FOR YOUR TECHNICAL ENVIRONMENT. NEVER INSTALL THE APPLICATION IN A PRODUCTION
+ENVIRONMENT. YOU ACKNOWLEDGE AND ACCEPT ALL RISKS ASSOCIATED WITH THE USE OF THE APPLICATION.
+
+IBM AltoroJ
+(c) Copyright IBM Corp. 2008, 2013 All Rights Reserved.
+*/
+%> 
+
+<!-- BEGIN HEADER -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+
+<% boolean loggedIn = request.getSession().getAttribute("user") != null; %>
+
+<head>
+	<title>Altoro Mutual</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="<%=request.getContextPath()%>/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="margin-top:5px;">
+
+<div id="header" style="margin-bottom:5px; width: 99%;">
+  <form id="frmSearch" method="get" action="<%=request.getContextPath()%>/search.jsp">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tr>
+		      <td rowspan="2"><a id="HyperLink1" href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.gif" width=283 height=80/></a></td>
+			  <td align="right" valign="top">
+  			  <a id="LoginLink" href="<%=(!loggedIn)?request.getContextPath()+"/login.jsp":request.getContextPath()+"/logout.jsp"%>"><font style="font-weight: bold; color: red;"><%=(!loggedIn)?"Sign In":"Sign Off"%></font></a> | <a id="HyperLink3" href="<%=request.getContextPath()%>/index.jsp?content=inside_contact.htm">Contact Us</a> | <a id="HyperLink4" href="<%=request.getContextPath()%>/feedback.jsp">Feedback</a> | <label for="txtSearch">Search</label>
+          <input type="text" name="query" id="query" accesskey="S" />
+          <input type="submit" value="Go" />
+			  </td>
+		  </tr>
+		  <tr>
+			  <td align="right" style="background-image:url('<%=request.getContextPath()%>/images/gradient.jpg');padding:0px;margin:0px;"><img src="<%=request.getContextPath()%>/images/header_pic.jpg" alt="" width=354 height=60/></td>
+		  </tr>
+	  </table>
+	</form>
+</div>
+
+<table cellspacing="0" width="100%">
+  <tr>
+    <td width="25%" class="bt br bb"><div id="Header1"><img id="Image1" src="<%=request.getContextPath()%>/images/pf_lock.gif" width=12 height=14 style="vertical-align: bottom;" alt="Secure Login"/> &nbsp; <a id="AccountLink" href="<%=(loggedIn)?request.getContextPath()+"/bank/main.jsp":request.getContextPath()+"/login.jsp"%>" class="focus" ><%=(loggedIn)?"MY ACCOUNT":"ONLINE BANKING LOGIN"%></a></div></td>
+    <td width="25%" class="cc bt br bb"><div id="Header2"><a id="LinkHeader2" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=personal.htm" >PERSONAL</a></div></td>
+    <td width="25%" class="cc bt br bb"><div id="Header3"><a id="LinkHeader3" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=business.htm" >SMALL BUSINESS</a></div></td>
+    <td width="25%" class="cc bt bb"><div id="Header4"><a id="LinkHeader4" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=inside.htm">INSIDE ALTORO MUTUAL</a></div></td>
+  </tr>
+  <tr>
+  
+  <!-- END HEADER -->
