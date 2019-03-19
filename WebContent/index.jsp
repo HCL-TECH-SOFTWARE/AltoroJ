@@ -59,7 +59,7 @@ IBM AltoroJ
 	                 {
 	                	 shell = "bash";
 	                	 shellarg = "-c";
-	                	 command = "cat " + path + "/" + content;
+	                	 command = "cat '" + path + "/" + content +"'";
 	                 }
 
 	                 Process proc = Runtime.getRuntime().exec(new String[] {shell, shellarg, command});
