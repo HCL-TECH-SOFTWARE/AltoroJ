@@ -6,7 +6,14 @@ sourceCompatibility = "1.7";
 targetCompatibility = "1.7";
 
 repositories {
-	maven { url 'http://repo1.maven.org/maven2' }
+	mavenLocal()
+       jcenter()
+          maven {
+           url 'https://maven.google.com'
+          }
+       maven {
+           url "https://jitpack.io"
+       }
 }
 
 sourceSets {
