@@ -6,7 +6,10 @@ sourceCompatibility = "1.7";
 targetCompatibility = "1.7";
 
 repositories {
-	jcenter()
+	maven {
+    url "https://maven.google.com"
+}
+jcenter()
 }
 
 sourceSets {
