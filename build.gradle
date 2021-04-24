@@ -41,3 +41,15 @@ war {
 	exclude 'WEB-INF/classes/**/*.class'
 	exclude 'WEB-INF/lib/**/*.jar'
 }
+
+plugins {
+  id "org.sonarqube" version "3.1.1"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "chocbomb_AltoroJ"
+    property "sonar.organization", "chocbomb"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
