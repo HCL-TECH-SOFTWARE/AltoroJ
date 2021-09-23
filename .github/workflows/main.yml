@@ -30,8 +30,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Gradle Build
         run: |
+          ls -la
           cd "main/AltoroJ 3.1.1"
           pwd
+          ls -la
           gradle build
       - name: Check War File Exists
         run: |
