@@ -31,6 +31,7 @@ jobs:
       - name: Gradle Build
         run: |
           cd main
+          pwd
           gradle build
       - name: Check War File Exists
         run: |
