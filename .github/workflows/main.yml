@@ -31,7 +31,7 @@ jobs:
       - name: Gradle Build
         run: |
           ls -la
-          cd "main/AltoroJ 3.1.1"
+          cd main
           pwd
           ls -la
           gradle build
