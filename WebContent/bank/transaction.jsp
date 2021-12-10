@@ -25,7 +25,6 @@ IBM AltoroJ
 %> 
     
 <jsp:include page="/header.jspf"/>
-<%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil" %>
 
 <div id="wrapper" style="width: 99%;">
 	<jsp:include page="membertoc.jspf"/>
