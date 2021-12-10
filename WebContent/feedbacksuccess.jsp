@@ -41,11 +41,18 @@ IBM AltoroJ
 		 
 		 <p>Thank you for your comments<%= (request.getAttribute("message_feedback")!=null)?", "+request.getAttribute("message_feedback"):"" %>.  They will be reviewed by our Customer Service staff and given the full attention that they deserve. 
 		 <% String email = (String) request.getParameter("email_addr"); 
+		 String sanitizedEmail = ServletUtil.newSanitizedValue(email).toString();
+		 
 		 	boolean regExMatch = email!=null && email.matches(ServletUtil.EMAIL_REGEXP);
 		 	if (email != null && email.trim().length() != 0 && regExMatch) {%> 
-			 Our reply will be sent to your email: <%= ServletUtil.sanitzieHtmlWithRegex(email.toLowerCase())/*ServletUtil.sanitizeWeb(email.toLowerCase())*/%>
+			 Our reply will be sent to your email:  <%= ServletUtil.newSanitizedValue(email)%>
 		<% } else {%>
-			However, the email you gave is incorrect (<%=ServletUtil.sanitzieHtmlWithRegex(email.toLowerCase()) /*ServletUtil.sanitizeWeb(email.toLowerCase())*/%>) and you will not receive a response.
+		email is not valid
+		<%
+   out.write("<script>");
+   out.write("alert(\"the provided email is not correct: " + ServletUtil.newSanitizedValue(email) + "\")");
+   out.write("</script>");
+%>
 		<% }%>
 		</p>
 		<% if (ServletUtil.isAppPropertyTrue("enableFeedbackRetention")){%>

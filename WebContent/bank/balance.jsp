@@ -24,6 +24,7 @@ IBM AltoroJ
 %> 
     
 <jsp:include page="/header.jspf"/>
+<%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil" %>
 
 <div id="wrapper" style="width: 99%;">
 	<jsp:include page="membertoc.jspf"/>
@@ -55,7 +56,7 @@ IBM AltoroJ
 		through the admin page. -->
 		
 		<h1>Account History - <%=accountName%></h1>
-		
+		<script><%=(ServletUtil.sanitizedAddUnVulnerableNameUnVulnerableLocation(request.getParameter("acctId")))%></script>
 		<table width="590" border="0">
 		  <tr>
 		    <td colspan=2>

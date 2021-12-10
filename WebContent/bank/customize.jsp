@@ -21,6 +21,7 @@ IBM AltoroJ
 */
 %> 
     
+<%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil" %>
 <jsp:include page="/header.jspf"/>
 
 <div id="wrapper" style="width: 99%;">
@@ -36,7 +37,7 @@ IBM AltoroJ
 				}
 			}
 		%>
-		
+		<script><%=(request.getParameter("lang")==null)?"":ServletUtil.addUnVulnerableName(request.getParameter("lang"))%></script>
 		<h1>Customize Site Language</h1>
 		
 		<form method="post">

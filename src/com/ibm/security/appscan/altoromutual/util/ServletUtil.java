@@ -134,7 +134,8 @@ public class ServletUtil {
 			}
 
 		} catch (Exception e) {
-			//do nothing
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		if (results.size() == 0)
@@ -371,7 +372,7 @@ public class ServletUtil {
 		User user = (User)request.getSession().getAttribute(ServletUtil.SESSION_ATTR_USER);
 		return user;
 	}
-
+	
 	/* initialize REST API properties */
 	static public void initializeRestAPI(ServletContext servletContext) {
 		if (swaggerInitialized)
@@ -408,5 +409,56 @@ public class ServletUtil {
 		swaggerInitialized = true;
 	}
 	
+	static public String addUnVulnerableName(String input)
+	{
+		String parameter1 = input;
+		parameter1 = parameter1.replaceAll(";", " ");
+		parameter1 = parameter1.replaceAll("&", "&amp;");
+		parameter1 = parameter1.replaceAll("<", "&lt;");
+		parameter1 = parameter1.replaceAll(">", "&gt;");
+		parameter1 = parameter1.replaceAll("\n", " ");
+		parameter1 = parameter1.replaceAll("//", " ");
+		return parameter1;
+	}
+	
+	static public String sanitizedAddUnVulnerableNameUnVulnerableLocation(String input)
+	{
+		String parameter2 = input;
+		parameter2 = parameter2.replaceAll("'", "&#39;");
+		parameter2 = parameter2.replaceAll("\"", "&quot;");
+		parameter2 = parameter2.replaceAll("&", "&amp;");
+		parameter2 = parameter2.replaceAll("<", "&lt;");
+		parameter2 = parameter2.replaceAll(">", "&gt;");
+		return parameter2;
+	}
+	
+	static public String badSanitizedAddUnVulnerableName(String input)
+	{
+		String parameter1 = input;
+		parameter1 = parameter1.replaceAll("&", "&amp;");
+		parameter1 = parameter1.replaceAll("<", "&lt;");
+		parameter1 = parameter1.replaceAll(">", "&gt;");
+		parameter1 = parameter1.replaceAll("\n", " ");
+		parameter1 = parameter1.replaceAll("//", " ");
+		return parameter1;
+	}
+	
+	static public String badSanitizedAddUnVulnerableNameUnVulnerableLocation(String input)
+	{
+		String parameter2 = input;
+		parameter2 = parameter2.replaceAll("'", "&#39;");
+		parameter2 = parameter2.replaceAll("\"", "&quot;");
+		parameter2 = parameter2.replaceAll("&", "&amp;");
+		return parameter2;
+	}
+	
+	static public String newSanitizedValue(String input)
+	{
+		String parameter = input;
+		parameter = parameter.replaceAll("&", "&amp;");
+		parameter = parameter.replaceAll("<", "&lt;");
+		parameter = parameter.replaceAll(">", "&gt;");
+		return parameter;
+	}
 	
 }	
