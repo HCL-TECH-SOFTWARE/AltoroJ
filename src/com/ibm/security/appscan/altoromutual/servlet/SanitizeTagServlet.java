@@ -26,7 +26,6 @@ public class SanitizeTagServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -34,7 +33,6 @@ public class SanitizeTagServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String attId = goodSanitationForTag(request.getParameter("uid"));
 		String attValue = goodSanitationForTag(request.getParameter("ps"));
 		request. setAttribute("attId", attId);
@@ -49,5 +47,5 @@ public class SanitizeTagServlet extends HttpServlet {
 		    parameter1 = parameter1.replaceAll("<", "\\u003C");
 		    parameter1 = parameter1.replaceAll(">", "\\u003E");
 		    return parameter1;
-		}
+	}
 }

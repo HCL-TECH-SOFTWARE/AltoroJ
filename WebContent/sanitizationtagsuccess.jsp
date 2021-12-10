@@ -1,4 +1,4 @@
-                                                                                                                                                     
+                                                                                                                                                   
 <%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil" errorPage="notfound.jsp"%>                                                   
 <jsp:include page="header.jspf"/>                                                                                                                    
                                                                                                                                                      
@@ -7,13 +7,17 @@
    <td valign="top" colspan="3" class="bb">                                                                                                          
 		<div class="fl" style="width: 99%;">                                                                                                         
 		</span></p>          
-		<% String k = (String) request.getAttribute("attId"); 
-		String p = (String) request.getAttribute("attValue");
-   out.write("<input type='text' id='"+k+"' value='check the id' />");
-   out.write("<p>" + p + "</p>");
-%>                                                                                                                                                                                                                                                                                                                                                                                                
+		<h3 style="color:green;" style="font-size:16px">Thank You..! Mr/Mrs:  <%
+         out.println(request.getAttribute("attId"));
+      %> </h3>
+		
+      
+	<p style="font-size:14px">Dear Customer, Your <%
+         out.println("email id " + request.getAttribute("attValue"));
+      %>has been registered with Altoro Bank & will be reviewed by our Customer Service staff.<br><br>The latest offers and cash backs will be sent to your mail.<br><br>Thank You for banking with Altoro Bank  </p>
+		                                                                                                                                                                                                                                                                                                                                                                   
 		</div>                                                                                                                                                                                                                                                                      
     </td>                                                                                                                                            
 </div>                                                                                                                                               
                                                                                                                                                      
-<jsp:include page="footer.jspf"/>                                                                                                                    
+<jsp:include page="footer.jspf"/>  

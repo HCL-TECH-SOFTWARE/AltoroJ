@@ -18,15 +18,13 @@ public class SanitizationServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public SanitizationServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+        super();        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -34,9 +32,6 @@ public class SanitizationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//String email = request.getParameter("uid");
-		//String subject = request.getParameter("ps");
 		String attId = goodSanitationForIdAttribute(request.getParameter("uid"));
 		String attValue = goodSanitationForIdAttribute(request.getParameter("ps"));
 		request. setAttribute("attId", attId);

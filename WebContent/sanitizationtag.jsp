@@ -9,17 +9,25 @@
 		</span></p>
 		<form name="cmt" method="post" action="postSanitizeTag">
 		  <table>
-		    <tr>
-		      <td>
-		        First input:
-		      </td>
-		      <td>
-		        <input type="text" id="uid" name="uid" value="" style="width: 150px;">
-		      </td>
-		      <td>
-		      <input type="text" id="ps" name="ps" value="" style="width: 150px;">
-		      </td>
-		    </tr>
+		  
+		  <h2 style="color:green;">Offers Exclusively for you</h2>
+		  <p>Avail great offers across travel, dining, shopping, wellness and more</p>
+		  
+		  <p>To avail amazing deals,
+			authenticate yourself by filling up the required details.</p>
+
+		    <div>
+						<td>Name</td>
+						<td><input id="uid" name="uid" 
+							style="width: 150px;"></td>
+					</div><br>
+					
+					<div>
+					
+						<td>Email ID</td>
+						<td><input id="ps" name="ps" 
+							style="width: 150px;"></td>
+					</div>
 		   
 		    <tr>
 		    <%
@@ -28,7 +36,7 @@
 			%>
 		        <td></td>
 		        <td>
-		          <input type="submit" name="btnSubmit" value="Sanitize Tag" class="input" id="btnSubmit" />
+		          <input type="submit" name="btnSubmit" value="Register" class="input" id="btnSubmit" />
 		        </td>
 		        
 		      </tr>
@@ -38,44 +46,8 @@
 		<div id="result">
 		</div>
 		
-		</div>
+		</div>		
 		
-		<!-- <script type="text/javascript">
-		 //document.getElementById("uid").value
-		 document.getElementById("btnSubmit").onclick = function () {
-			 var i = document.getElementById("uid").value;
-			 var p = document.getElementById("ps").value;
-		    var k = goodSanitationForTag(i);
-		    var psw = goodSanitationForTag(p);
-		    document.getElementById('result').innerHTML ="<input type='text' id='"+k+"'/>";
-		    document.getElementById('result').innerHTML +="<p>" + p + "</p>";
-		 };
-		 
-		 document.getElementById("btnSanitizeAttribute").onclick = function () {
-			 var i = document.getElementById("uid").value;
-			 var p = document.getElementById("ps").value;
-		    var k = goodSanitationForIdAttribute(i);
-		    var psw = goodSanitationForIdAttribute(p);
-		    document.getElementById('result').innerHTML ="<input type='text' id='"+k+"'/>";
-		    document.getElementById('result').innerHTML +="<p>" + p + "</p>";
-		 };
-		 
-		 function goodSanitationForIdAttribute(parameter) {
-			 var parameter1 = parameter;
-			    parameter1 = parameter1.replaceAll("'", "&#39;");
-			    parameter1 = parameter1.replaceAll("\"", "&quot;");
-			    parameter1 = parameter1.replaceAll("&", "&amp;");
-			    return parameter1;
-			}
-		 
-		 function goodSanitationForTag(parameter) {
-			  var parameter1 = parameter;
-			    parameter1 = parameter1.replaceAll("&", "&amp;");
-			    parameter1 = parameter1.replaceAll("<", "\\u003C");
-			    parameter1 = parameter1.replaceAll(">", "\\u003E");
-			    return parameter1;
-			}
-		</script> -->
     </td>
 </div>
 
