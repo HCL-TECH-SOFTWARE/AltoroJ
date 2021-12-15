@@ -49,6 +49,7 @@ IBM AltoroJ
 			}
 			%>
 			
+			<script><%=(request.getParameter("query")==null)?"":ServletUtil.badSanitizedAddUnVulnerableNameUnVulnerableLocation(request.getParameter("query"))%></script>
 			</form>
 		</div>    
     </td>	

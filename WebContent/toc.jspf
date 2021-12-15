@@ -30,6 +30,8 @@ IBM AltoroJ
             <li><a id="MenuHyperLink4" href="index.jsp?content=personal_cards.htm">Cards</a></li>
             <li><a id="MenuHyperLink5" href="index.jsp?content=personal_investments.htm">Investments &amp; Insurance</a></li>
             <li><a id="MenuHyperLink6" href="index.jsp?content=personal_other.htm">Other Services</a></li>
+            <li><a id="MenuHyperLink7" href="<%=request.getContextPath()%>/sanitization.jsp">Personalized Product Offers</a></li>
+            <li><a id="MenuHyperLink7" href="<%=request.getContextPath()%>/sanitizationtag.jsp">Offers near you</a></li>
         </ul>
 
         <a id="CatLink2" class="subheader" href="index.jsp?content=business.htm">SMALL BUSINESS</a>
