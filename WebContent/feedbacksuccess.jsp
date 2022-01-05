@@ -40,55 +40,61 @@ IBM AltoroJ
 		 <h1>Thank You</h1>
 		 
 		 <p>Thank you for your comments<%= (request.getAttribute("message_feedback")!=null)?", "+request.getAttribute("message_feedback"):"" %>.  They will be reviewed by our Customer Service staff and given the full attention that they deserve. 
-		 <% String email = (String) request.getParameter("email_addr"); 
-		 	boolean regExMatch = email!=null && email.matches(ServletUtil.EMAIL_REGEXP);
-		 	if (email != null && email.trim().length() != 0 && regExMatch) {%> 
-			 Our reply will be sent to your email: <%= ServletUtil.sanitzieHtmlWithRegex(email.toLowerCase())/*ServletUtil.sanitizeWeb(email.toLowerCase())*/%>
-		<% } else {%>
-			However, the email you gave is incorrect (<%=ServletUtil.sanitzieHtmlWithRegex(email.toLowerCase()) /*ServletUtil.sanitizeWeb(email.toLowerCase())*/%>) and you will not receive a response.
-		<% }%>
-		</p>
-		<% if (ServletUtil.isAppPropertyTrue("enableFeedbackRetention")){%>
-		<br><br>
-		<h3>Details of your feedback submission</h3>
-		<p>
+		  <% 
+		        String email = (String) request.getParameter("email_addr"); 
+		        String sanitizedEmail = ServletUtil.newSanitizedValue(email).toString();		 
+		 	    boolean regExMatch = email!=null && email.matches(ServletUtil.EMAIL_REGEXP);
+		 	    if (email != null && email.trim().length() != 0 && regExMatch) {%> 
+			         Our reply will be sent to your email:  <%= ServletUtil.newSanitizedValue(email)%>
+		        <%}
+		 	    else {%>
+		             email is not valid
+		             <%
+   						out.write("<script>");
+   						out.write("alert(\"the provided email is not correct: " + ServletUtil.newSanitizedValue(email) + "\")");
+   						out.write("</script>");
+					 %>
+			   <%}
+		   %>
+		 </p>
 		<% 
-		long feedbackId = -1;
-		Object feedbackIdObj = request.getAttribute("feedback_id");
-		if (feedbackIdObj != null && feedbackIdObj instanceof String) {
-//			try {
-				feedbackId = Long.parseLong((String)feedbackIdObj);
-//			} (catch NumberFormatException e){
-//				// do nothing
-//			}
-		}
+		    if (ServletUtil.isAppPropertyTrue("enableFeedbackRetention")){%>
+		       	<br><br>
+				<h3>Details of your feedback submission</h3>
+				<p>
+				  <% 
+					long feedbackId = -1;
+					Object feedbackIdObj = request.getAttribute("feedback_id");
+					if (feedbackIdObj != null && feedbackIdObj instanceof String) {
+						feedbackId = Long.parseLong((String)feedbackIdObj);
+					}
 		
-		Feedback feedbackDetails = ServletUtil.getFeedback(feedbackId);
+					Feedback feedbackDetails = ServletUtil.getFeedback(feedbackId);
 		
-		if (feedbackDetails != null){
-			
+					if (feedbackDetails != null){%>
+						<table border=0>
+						  <tr>
+						    <td align=right>Your Name:</td>
+						    <td valign=top><%=feedbackDetails.getName() %></td>
+						  </tr>
+						  <tr>
+						    <td align=right>Your Email Address:</td>
+						    <td valign=top><%=feedbackDetails.getEmail() %></td>
+						  </tr>
+						  <tr>
+						    <td align=right>Subject:</td>
+						    <td valign=top><%=feedbackDetails.getSubject() %></td>
+						  </tr>
+						  <tr>
+						    <td align=right valign=top>Question/Comment:</td>
+						    <td><%=feedbackDetails.getMessage()%></td>
+						  </tr>
+						</table>
+					<%}
+				  %>
+				</p>
+			<%}
 		%>
-			<table border=0>
-			  <tr>
-			    <td align=right>Your Name:</td>
-			    <td valign=top><%=feedbackDetails.getName() %></td>
-			  </tr>
-			  <tr>
-			    <td align=right>Your Email Address:</td>
-			    <td valign=top><%=feedbackDetails.getEmail() %></td>
-			  </tr>
-			  <tr>
-			    <td align=right>Subject:</td>
-			    <td valign=top><%=feedbackDetails.getSubject() %></td>
-			  </tr>
-			  <tr>
-			    <td align=right valign=top>Question/Comment:</td>
-			    <td><%=feedbackDetails.getMessage()%></td>
-			  </tr>
-			</table>
-		<% } %>
-		</p>
-		<% } %>
 		</div>
     </td>	
 </div>
