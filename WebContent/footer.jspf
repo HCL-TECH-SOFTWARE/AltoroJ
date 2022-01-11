@@ -7,14 +7,14 @@ technical environment in which the application is installed. You must delete and
 uninstall this demonstration application upon completion of the demonstration for
 which it is intended. 
 
-IBM DISCLAIMS ALL LIABILITY OF ANY KIND RESULTING FROM YOUR USE OF THE APPLICATION
+HCL DISCLAIMS ALL LIABILITY OF ANY KIND RESULTING FROM YOUR USE OF THE APPLICATION
 OR YOUR FAILURE TO DELETE THE APPLICATION FROM YOUR ENVIRONMENT UPON COMPLETION OF
 A DEMONSTRATION. IT IS YOUR RESPONSIBILITY TO DETERMINE IF THE PROGRAM IS APPROPRIATE
 OR SAFE FOR YOUR TECHNICAL ENVIRONMENT. NEVER INSTALL THE APPLICATION IN A PRODUCTION
 ENVIRONMENT. YOU ACKNOWLEDGE AND ACCEPT ALL RISKS ASSOCIATED WITH THE USE OF THE APPLICATION.
 
-IBM AltoroJ
-(c) Copyright IBM Corp. 2008, 2013 All Rights Reserved.
+HCL AltoroJ
+(c) Copyright HCL Corp. 2018, 2022 All Rights Reserved.
 */
 %> 
 
@@ -33,18 +33,27 @@ IBM AltoroJ
     <a id="HyperLink6" href="<%=request.getContextPath()%>/swagger/index.html">REST API</a>
     &nbsp;&nbsp;|&nbsp;&nbsp; 
     &copy;&nbsp;<% out.print(Calendar.getInstance().get(Calendar.YEAR)); %> Altoro Mutual, Inc.
-    <span style="color:red;font-weight:bold;font-style:italic;float:right">This web application is open source!<span style="color:black;font-style:italic;font-weight:normal;float:right">&nbsp;<a href="https://github.com/AppSecDev/AltoroJ/">Get your copy from GitHub</a> and take advantage of advanced features</span></span>
-	<br><br><br>
+
     <div class="disclaimer">
-        The AltoroJ website is published by IBM Corporation for the sole purpose of
-        demonstrating the effectiveness of IBM products in detecting web application
+    <table>
+        <tbody>
+        <tr>
+        <td class="footer">
+        The AltoroJ website is published by HCL Software for the sole purpose of
+        demonstrating the effectiveness of HCL products in detecting web application
         vulnerabilities and website defects. This site is not a real banking site. Similarities,
         if any, to third party products and/or websites are purely coincidental. This site is
-        provided "as is" without warranty of any kind, either express or implied. IBM does
+        provided "as is" without warranty of any kind, either express or implied. HCL does
         not assume any risk in relation to your use of this website. For more information,
-        please go to <a id="HyperLink7" href="http://www-142.ibm.com/software/products/us/en/subcategory/SWI10" >http://www-142.ibm.com/software/products/us/en/subcategory/SWI10</a>.<br /><br />
+        please go to <a id="HyperLink7" href="https://www.hcltechsw.com/products/appscan" >https://www.hcltechsw.com/products/appscan</a>.<br /><br />
 
-        Copyright &copy; 2008, <% out.print(Calendar.getInstance().get(Calendar.YEAR)); %>, IBM Corporation, All rights reserved.
+        Copyright &copy; <% out.print(Calendar.getInstance().get(Calendar.YEAR)); %>, HCL Technologies Limited | www.hcltechsw.com, All rights reserved.</td>
+        <td>
+        <a href="https://www.hcltechsw.com/appscan/v10"><img src="<%=request.getContextPath()%>/images/banner02.jpg" alt="" height=60/></a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
     </div>
 </div>
 

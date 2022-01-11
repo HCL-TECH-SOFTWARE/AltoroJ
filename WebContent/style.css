@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "gotham";
+  src: url('font/Gotham-Book.woff') format('woff'),
+       url('font/Gotham-Book.woff2') format('woff2'),
+       url('font/Gotham-Book.ttf') format('truetype');
+  font-weight: normal;
+}
 body, table, td, p  {
 	color:#000000;
-	font: 10px Verdana, Arial, Sans-Serif;
+	font: 14px "Gotham"; 
 	line-height: 1.6;
 }
 img {
@@ -24,11 +31,11 @@ th {
 }
 input {
 	color:#333366;
-	font: 11px Verdana, Arial, Sans-Serif;
+	font: 11px Gotham;
 }
 h1 {
 	color:#00796C;
-	font: 22px Verdana, Arial, Sans-Serif;
+	font: 22px Gotham;
 	font-weight: bold;
 	margin-top: 0px;
 	padding-top: 15px;
@@ -36,7 +43,7 @@ h1 {
 }
 h2 {
 	color: #333333;
-	font: 14px Verdana, Arial, Sans-Serif;
+	font: 18px Gotham;
 	font-weight: bold;
 }
 a {
@@ -80,6 +87,12 @@ a:hover {
 	margin-top: 10px;
 	padding: 10px;
 }
+
+.footer {
+	font: 12px 'Gotham';
+	color: '#696969';
+}
+
 .err {
 	background-color: #FFD0D0;
 	padding: 10px;
