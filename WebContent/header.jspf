@@ -45,7 +45,7 @@ IBM AltoroJ
 			  </td>
 		  </tr>
 		  <tr>
-			  <td align="right" style="background-image:url('<%=request.getContextPath()%>/images/gradient.jpg');padding:0px;margin:0px;"><img src="<%=request.getContextPath()%>/images/header_pic.jpg" alt="" width=354 height=60/></td>
+			  <td align="right" style="background-image:url('<%=request.getContextPath()%>/images/gradient.jpg');padding:0px;margin:0px;"><img src="<%=request.getContextPath()%>/images/newGif.gif" alt="" height=60/><a href="https://www.appscan.com/freetrial"><img src="<%=request.getContextPath()%>/images/banner01.jpg" alt=""  height=60/></a></td>
 		  </tr>
 	  </table>
 	</form>
