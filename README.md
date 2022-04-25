@@ -28,6 +28,9 @@ AltoroJ has been developed using Eclipse and designed to run on Tomcat 7, but si
 Main usernames and passwords for AltoroJ are as follows:
 - jsmith/demo1234
 - admin/admin
+# Credentials
+- AWS_ACCESS_KEY_ID: 12312312432534
+- AWS_SECRET_ACCESS_KEY: 123123123asdas12312
 
 
 # Advanced options
