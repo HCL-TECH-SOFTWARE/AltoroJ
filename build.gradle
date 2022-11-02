@@ -18,7 +18,7 @@ sourceSets {
 }
 
 dependencies {
-	compile \
+	implementation \
 		fileTree(dir: "${webAppDirName}/WEB-INF/lib", include: '*.jar'),
 		'commons-codec:commons-codec:1.6',
 		'commons-lang:commons-lang:2.5',
