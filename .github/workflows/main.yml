@@ -44,7 +44,7 @@ jobs:
           # The ASoC application id where your scan will appear.
           application_id: ${{ secrets.ASOC_APPID }}
           # The name of the scan created in ASoC.
-          scan_name: Github Actions Scan
+          scan_name: "Github Actions Scan"
           # Make the scan a personal scan.
           personal_scan: false
           # Only run static analysis. Do not run SCA (Software Composition Analysis).
