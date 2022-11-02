@@ -27,34 +27,40 @@ jobs:
         with:
           path: main
           
-      - name: Checkout ASoC SAST Repo
-        uses: actions/checkout@v2
-        with:
-          repository: cwtravis/asoc-sast-linux
-          path: asoc
-          
       # Runs a set of commands using the runners shell
       - name: Gradle Build
         run: |
           ls -la
           cd main
-          #gradle build
+          gradle build
           
       # Runs AppScan Step
-      - name: Perform HCL AppScan Security Analysis
-        env:
-          ASOC_KEY: ${{ secrets.ASOC_API_KEY }}
-          ASOC_SECRET: ${{ secrets.ASOC_API_SECRET }}
-          ASOC_SCAN_NAME: Automated Scan from Github Actions
-          ASOC_APPID: ${{ secrets.ASOC_APPID }}
-          ASOC_TARGET_DIR: main
-          ASOC_WAIT: True
-          
-        run: |
-          python3 asoc/RunSAST.py
-        shell: bash
-        
-      - uses: actions/upload-artifact@v2
+      - name: HCL AppScan Static Analyzer
+        # You may pin to the exact commit or the version.
+        # uses: HCL-TECH-SOFTWARE/appscan-sast-action@3826511ac1043c4ffbea72bba9d450755a95338c
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1
         with:
-          name: hcl_appscan_results
-          path: reports/
+          # API key for connecting to ASoC.
+          asoc_key: ${{ secrets.ASOC_API_KEY }}
+          # Secret for connecting to ASoC.
+          asoc_secret: ${{ secrets.ASOC_API_SECRET }}
+          # The ASoC application id where your scan will appear.
+          application_id: ${{ secrets.ASOC_APPID }}
+          # The name of the scan created in ASoC.
+          scan_name: Github Actions Scan
+          # Make the scan a personal scan.
+          personal_scan: false
+          # Only run static analysis. Do not run SCA (Software Composition Analysis).
+          static_analysis_only: false
+          # Only run SCA (Software Composition Analysis). Do not run static analysis.
+          open_source_only: false
+          # By default only source code files will be analyzed. Enabling this option will result in build output files for Java and .NET to be analyzed (.jar/.war/.ear/.dll/.exe). Additionally, Maven, Gradle, and Visual Studio solutions will be built if the build environment is available.
+          scan_build_outputs: true
+          # By default this action will initiate the scan in ASoC, but it will not wait for analysis to complete. Enabling this option will cause the action to wait for analysis to complete. Note that this will cause the action to run longer.
+          wait_for_analysis: true
+          # If wait_for_analysis is true, the number of minutes to wait for analysis to complete. The default is 30 minutes.
+          analysis_timeout_minutes: 30
+          # If wait_for_analysis is true, fail the job if any non-compliant issues are found in the scan.
+          fail_for_noncompliance: true
+          # If fail_for_noncompliance is enabled, the severity that indicates a failure. Lesser severities will not be considered a failure. For example, if failure_threshold is set to Medium, Informational and/or Low severity issues will not cause a failure. Medium, High, and/or Critical issues will cause a failure.
+          failure_threshold: High
