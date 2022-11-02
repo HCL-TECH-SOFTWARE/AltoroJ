@@ -24,14 +24,11 @@ jobs:
     steps:
       - name: Checkout Main Repo
         uses: actions/checkout@v2
-        with:
-          path: main
           
       # Runs a set of commands using the runners shell
       - name: Gradle Build
         run: |
           ls -la
-          cd main
           gradle build
           
       # Runs AppScan Step
