@@ -29,7 +29,7 @@ jobs:
       - name: Gradle Build
         run: |
           ls -la
-          gradle build
+          #gradle build
           
       # Runs AppScan Step
       - name: HCL AppScan Static Analyzer
