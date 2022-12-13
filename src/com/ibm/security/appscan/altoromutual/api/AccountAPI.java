@@ -223,7 +223,7 @@ public class AccountAPI extends AltoroAPI {
 				response = response + "{\"date\" : \"" + date
 						+ "\", \"transaction_type\" : \""
 						+ transaction.getTransactionType()
-						+ "\", \"ammount\" : \"" + amount + "\" },\n";
+						+ "\", \"amount\" : \"" + amount + "\" },\n";
 			}
 			response = response + "],\n";
 		} catch (Exception e) {
