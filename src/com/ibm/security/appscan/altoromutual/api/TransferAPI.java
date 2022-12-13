@@ -7,7 +7,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.wink.json4j.*;
+import org.json.*;
 
 import com.ibm.security.appscan.altoromutual.util.OperationsUtil;
 
