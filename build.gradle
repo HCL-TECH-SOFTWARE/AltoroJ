@@ -21,7 +21,7 @@ sourceSets {
 }
 
 dependencies {
-	compile \
+	implementation \
 		fileTree(dir: "${webAppDirName}/WEB-INF/lib", include: '*.jar'),
 		'commons-codec:commons-codec:1.6',
 		'commons-lang:commons-lang:2.5',
@@ -31,9 +31,9 @@ dependencies {
 		'org.glassfish.jersey.containers:jersey-container-servlet:2.27',
 		'org.glassfish.jersey.inject:jersey-hk2:2.27',
 		'log4j:log4j:1.2.16',
-	providedCompile \
 		'javax:javaee-api:7.0'
 		'org.json:json:20220924'
+	compileOnly  \
 }
 
 war {
