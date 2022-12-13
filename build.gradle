@@ -2,8 +2,8 @@
 apply plugin: 'war'
 
 webAppDirName = 'WebContent'
-sourceCompatibility = "1.7"; 
-targetCompatibility = "1.7";
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
 
 repositories {
 	mavenCentral()
@@ -31,9 +31,9 @@ dependencies {
 		'org.glassfish.jersey.containers:jersey-container-servlet:2.27',
 		'org.glassfish.jersey.inject:jersey-hk2:2.27',
 		'log4j:log4j:1.2.16',
-		'javax:javaee-api:7.0'
 		'org.json:json:20220924'
 	compileOnly  \
+		'javax:javaee-api:7.0'
 }
 
 war {
