@@ -31,4 +31,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: boman-cli-uat -a run
+        run: boman-cli-uat -a run -u https://devapi.boman.ai/v2/
