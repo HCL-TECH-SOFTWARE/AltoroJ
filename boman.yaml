@@ -3,9 +3,11 @@ Auth:
   customer_token: d8a90f5c-b4ed-40ea-a83d-7a4bcb103bc0
 SAST:
   language: python
-SCA:
-  language: python
-Secret_Scan: true
 DAST:
   type:"WEB"
   URL:"https://demo.testfire.net/"
+SCA:
+  language: python
+
+Secret_Scan: true
+
