@@ -6,3 +6,6 @@ SAST:
 SCA:
   language: python
 Secret_Scan: true
+DAST:
+  type:"WEB"
+  URL:"https://demo.testfire.net/"
