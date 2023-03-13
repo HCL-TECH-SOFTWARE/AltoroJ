@@ -2,12 +2,12 @@ Auth:
   project_token: 35c4ec30-7b90-4030-a847-a03701b75a6f
   customer_token: d8a90f5c-b4ed-40ea-a83d-7a4bcb103bc0
 SAST:
-  language: python
+  language: javascript
 DAST:
   type:"WEB"
   URL:"https://demo.testfire.net/"
 SCA:
-  language: python
+  language: javascript
 
 Secret_Scan: true
 
