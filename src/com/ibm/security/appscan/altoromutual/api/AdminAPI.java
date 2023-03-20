@@ -108,5 +108,5 @@ public class AdminAPI extends AltoroAPI{
 		
 		return Response.status(Response.Status.OK).entity("{\"success\":\"Requested operation has completed successfully.\"}").type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
-
+ 
 }
