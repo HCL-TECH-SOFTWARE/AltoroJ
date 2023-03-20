@@ -10,7 +10,7 @@ AltoroJ uses Apache Derby as its SQL database that is automatically initialized 
 AltoroJ was created in 2008 and has gone through a number of iterations since then. It currently, being used around the world to demonstrate application security vulnerabilities, educate folks on how easy some of these issues are to exploit and how severe the impact may be, and is even a part of academic curricula. Even though AltoroJ is pretty stable, if you do find a bug or create a cool exploit for one of its vulnerabilities - please let us know!!!
 
 # Binaries and hosted versions
-If you'd like to try AltoroJ but want to skip all of the cool software development stuff, use publicly hosted version, available at http://altoromutual.com:8080/ . You will not be able to enable any of the advanced options and this site may not always be available, but it's the easiest way to get started
+If you'd like to try AltoroJ but want to skip all of the cool software development stuff, use publicly hosted version, available at http://altoromutual.com:8080/ . You will not be able to enable any of the advanced options and this site may not always be available, but it's the easiest way to get started 
 
 
 # Prereqiusites
