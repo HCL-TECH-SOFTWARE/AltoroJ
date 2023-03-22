@@ -1,0 +1,30 @@
+name: "HCL AppScan DAST"
+on:
+  workflow_dispatch
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run ASoC DAST Scan
+        uses: antonychiu2/asoc-dast-action@v1.0.3
+        with:
+          baseurl:  https://cloud.appscan.com
+          asoc_key: ${{ secrets.ASOC_API_KEY }}
+          asoc_secret: ${{ secrets.ASOC_API_SECRET }}
+          application_id: 1ee58dd1-522f-4ec2-bb7d-0ad19f4b23de
+          scan_type: 'staging'
+          dynamic_scan_type: dast
+          starting_URL: 'https://demo.testfire.net?mode=demo'
+          login_user: jsmith
+          login_pass: demo1234
+          network: public
+          fail_for_noncompliance: false
+          wait_for_analysis: true
+      - uses: actions/upload-artifact@v3
+        name: Upload HCL AppScan HTML Report to Github Artifacts
+        with:
+          name: AppScan Security Scan HTML Report 
+          path: '**/AppScan*.html'
+        if: success() || failure()
