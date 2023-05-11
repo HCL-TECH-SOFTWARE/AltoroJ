@@ -12,5 +12,10 @@ jobs:
           fetch-depth: 0
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2
+        with:
+          asoc_key: ${{secrets.ASOC_KEY}}
+          asoc_secret: ${{secrets.ASOC_SECRET}}
+          publish_on_merge: true
+          application_id: 2fe5bb97-87b1-4d27-b81a-315435790264
     env: 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
