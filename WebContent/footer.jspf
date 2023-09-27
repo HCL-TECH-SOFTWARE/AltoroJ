@@ -36,15 +36,16 @@ IBM AltoroJ
     <span style="color:red;font-weight:bold;font-style:italic;float:right">This web application is open source!<span style="color:black;font-style:italic;font-weight:normal;float:right">&nbsp;<a href="https://github.com/AppSecDev/AltoroJ/">Get your copy from GitHub</a> and take advantage of advanced features</span></span>
 	<br><br><br>
     <div class="disclaimer">
-        The AltoroJ website is published by IBM Corporation for the sole purpose of
-        demonstrating the effectiveness of IBM products in detecting web application
+        The AltoroJ website is published by HCL Technologies, Ltd. for the sole purpose of
+        demonstrating the effectiveness of HCL products in detecting web application
         vulnerabilities and website defects. This site is not a real banking site. Similarities,
         if any, to third party products and/or websites are purely coincidental. This site is
-        provided "as is" without warranty of any kind, either express or implied. IBM does
+        provided "as is" without warranty of any kind, either express or implied. HCL does
         not assume any risk in relation to your use of this website. For more information,
-        please go to <a id="HyperLink7" href="http://www-142.ibm.com/software/products/us/en/subcategory/SWI10" >http://www-142.ibm.com/software/products/us/en/subcategory/SWI10</a>.<br /><br />
+        please go to <a id="HyperLink7" href="https://www.hcl-software.com/appscan/" >https://www.hcl-software.com/appscan/</a>.<br /><br />
 
-        Copyright &copy; 2008, <% out.print(Calendar.getInstance().get(Calendar.YEAR)); %>, IBM Corporation, All rights reserved.
+        Copyright &copy; 2008, 2017, IBM Corporation, All rights reserved.
+        Copyright &copy; 2017, <% out.print(Calendar.getInstance().get(Calendar.YEAR)); %>, HCL Technologies, Ltd., All rights reserved.
     </div>
 </div>
 
