@@ -41,7 +41,7 @@ Please see WEB-INF/app.properties file for more information on each property
 AltoroJ has a fairly extensive REST API, which is documented using Swagger. You can find out more about and interact with the provided REST services by clicking on the REST API link in the footer of almost every AltoroJ page.
 
 
-# Troubleshooting
+# Troubleshooting!
 
 - Problem: AltoroJ runs, but an error “Failed to create database 'altoro‘” comes up when you try to log in
 - Cause: AltoroJ database does not get created. This is usually caused by folder permission issues on a locked-down system
