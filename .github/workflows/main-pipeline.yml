@@ -1,0 +1,43 @@
+name: "build image from Dockerfile"
+
+on:
+  push:
+    branches: [AltoroJ-3.2]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Install docker
+      run: |
+        sudo apt update
+        sudo apt install apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && sudo apt update
+        apt-cache policy docker-ce
+        sudo apt install docker-ce
+
+    - name: Build Docker image
+      run: |
+        docker build -t altoroj .
+        docker run -d -p 8080:8080 altoroj
+
+    - name: Run DAST test
+      id: dast_test
+      run: echo "::set-output name=result::$(python dast/sqli-dast.sh)"
+
+    - name: Comment PR
+      uses: actions/github-script@v5
+      with:
+        script: |
+          const output = `${{ steps.dast_test.outputs.result }}`
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          })
