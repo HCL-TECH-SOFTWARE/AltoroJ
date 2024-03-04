@@ -18,7 +18,7 @@ AltoroJ has been developed using Eclipse and designed to run on Tomcat 7, but si
 
 - Eclipse 4.6 or newer recommended (requires Java 8)
 - Tomcat 7.x
-- Gradle 3.0 to build from command line
+- Gradle 7.0 to build from command line
 - Gradle's Buildship Eclipse plug-in to automatically download required 3rd party libraries and run AltoroJ inside Eclipse
 -- Easiest way to install Buildship is from Eclipse Marketplace (inside Eclipse, go to Help -> Eclipse Marketplace)
 
@@ -60,3 +60,12 @@ OR modify Tomcat’s startup to include –Duser.home=“<new_path>” in Java a
 
 All files found in this project are licensed under the [Apache License 2.0](https://github.com/AppSecDev/AltoroJ/blob/master/LICENSE).
 
+# Running in a docker container
+Provided is a [Dockerfile](Dockerfile) that can be used to easily setup altoromutual inside a container.
+
+Requirements are : 
+1. Install [docker](https://docs.docker.com/get-docker/)
+2. Build the image from the Altoro base directory: 
+```docker build --name altoromutual .```
+3. Run the image
+```docker run -p8080:8080 altoromutual```

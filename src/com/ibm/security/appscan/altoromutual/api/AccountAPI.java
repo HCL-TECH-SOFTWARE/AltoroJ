@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import org.apache.wink.json4j.JSONException;
-import org.apache.wink.json4j.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -223,7 +223,7 @@ public class AccountAPI extends AltoroAPI {
 				response = response + "{\"date\" : \"" + date
 						+ "\", \"transaction_type\" : \""
 						+ transaction.getTransactionType()
-						+ "\", \"ammount\" : \"" + amount + "\" },\n";
+						+ "\", \"amount\" : \"" + amount + "\" },\n";
 			}
 			response = response + "],\n";
 		} catch (Exception e) {

@@ -30,8 +30,8 @@ import com.ibm.security.appscan.altoromutual.util.OperationsUtil;
 import com.ibm.security.appscan.altoromutual.util.ServletUtil;
 
 /**
- * This servlet allows to transfer funds between existing accounts
- * Servlet implementation class TransverServlet
+ * This servlet allows transferring funds between existing accounts
+ * Servlet implementation class TransferServlet
  * 
  * @author Alexei
  */

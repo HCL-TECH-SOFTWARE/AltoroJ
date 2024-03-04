@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.wink.json4j.*;
+import org.json.*;
 import com.ibm.security.appscan.altoromutual.util.DBUtil;
 import com.ibm.security.appscan.altoromutual.util.OperationsUtil;
 
@@ -41,7 +41,7 @@ public class LoginAPI{
 		}
 
 		// Check username and password parameters are there
-		if (!(myJson.containsKey("username") && myJson.containsKey("password"))) {
+		if (!(myJson.has("username") && myJson.has("password"))) {
 			myJson.clear();
 			myJson.put("error", "username or password parameter missing");
 			return Response.status(Response.Status.BAD_REQUEST).entity(myJson.toString()).build();

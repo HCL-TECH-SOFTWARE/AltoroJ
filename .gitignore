@@ -1,2 +1,5 @@
 /.gradle/
 /bin/
+build/classes/main/com/ibm/security/appscan/altoromutual/*/*.class
+build/libs/altoromutual.war
+*.class
